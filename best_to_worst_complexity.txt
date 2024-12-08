@@ -1,0 +1,19 @@
+
+//How to we find which complexity is best:
+suppose : N = 1000;
+
+Consant:       O(1)       -> 1
+Linear:        O(N)       -> 1000
+Logarithmic:   O(logN)    -> 10
+Square root:   O(sqrt(N)) -> 32
+quadratic:     O(N*N)     -> 1000000
+Linearithmic:  O(NlogN)   -> 10000
+
+
+//Sorted complexity
+Consant:       O(1)
+Logarithmic:   O(logN)
+Square root:   O(sqrt(N))
+Linear:        O(N) 
+Linearithmic:  O(NlogN)
+quadratic:     O(N*N) 
