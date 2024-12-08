@@ -4,3 +4,5 @@ time & space complexcity depend on n then we called o(n);
 
 //space complexity sate to time complexity
 1. space complexity just diffrent way to array 
+2. 2d array space complexity Oder of = O(n*n)
+3. space complexity temon kaje lage nah
