@@ -1,8 +1,62 @@
 //Moduls 01
 //Time & space complexcity
 time & space complexcity depend on n then we called o(n);
+order of n = O(n)
+
+#logarithmic complexity:
+when a loop use increment part intro or divide then we called O(nlogn)
+O(nlogn)
+
+#Sqrt complexity:
+when a loop use sqrt(n) or i*i <= n
+then we called order of = O(sqrt(n))
+
+#quadratic complexity:
+//order of = o(n*n);
+//order of = o(n*m);
+//order of = O(n*n*n);
+
+#linearithmic complexity:
+first n intro then nlog n then we called:
+Order of = O(n*nlogn)
+
+
+//How to we find which complexity is best:
+suppose : N = 1000;
+
+Consant:       O(1)       -> 1
+Linear:        O(N)       -> 1000
+Logarithmic:   O(logN)    -> 10
+Square root:   O(sqrt(N)) -> 32
+quadratic:     O(N*N)     -> 1000000
+Linearithmic:  O(NlogN)   -> 10000
+
+
+//Sorted complexity
+Consant:       O(1)
+Logarithmic:   O(logN)
+Square root:   O(sqrt(N))
+Linear:        O(N) 
+Linearithmic:  O(NlogN)
+quadratic:     O(N*N) 
 
 //space complexity sate to time complexity
 1. space complexity just diffrent way to array 
 2. 2d array space complexity Oder of = O(n*n)
 3. space complexity temon kaje lage nah
+
+Find out time complexity of the following problems:
+problem 01:
+O(n*n)
+problem 02:
+O(N*N)
+problem 03:
+O(n*Sqrt(n))
+problem 04:
+O(n3)
+problem 05:
+O(sqrt(n))
+probem 06:
+O(nlogn)
+problem 07:
+O(N*NLOGN)
