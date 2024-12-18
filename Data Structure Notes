@@ -328,6 +328,7 @@ int main()
 }
 
 #5.8 printing linklist easy way:
+and use teamporary variable for repeat value we print any time:
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -355,9 +356,11 @@ int main(){
     // cout <<head->next->val << endl;
     // cout <<head->next->next->val <<endl; 
     // cout <<head->next->next->next->val <<endl;
-    while(head != NULL){
-        cout <<head->val <<endl;
-        head = head->next;
+    
+    Node* tmp = head;
+    while(tmp != NULL){
+        cout <<tmp->val <<endl;
+        tmp = tmp->next;
     }
     return 0;
 }
