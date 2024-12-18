@@ -247,7 +247,8 @@ int main(){
 // getline(cin,v[i]);
 //and after size we call cin.ignore();
 
-
+Moudls : 05:
+##single linklist, 
 
 
 
