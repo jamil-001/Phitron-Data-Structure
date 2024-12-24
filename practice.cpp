@@ -1,48 +1,19 @@
 #include<bits/stdc++.h>
 using namespace std;
-class Node
+void print(int i,int n)
 {
-public:
-    int val;
-    Node *next;
-    Node(int val)
-    {
-        this->val = val;
-        this->next = NULL;
-    }
-};
-
-void insert_at_tail_op(Node* &head,Node* &tail,int val)
-{
-    Node* newnode = new Node(val);
-    if(head == NULL){
-        head = newnode;
-        tail = newnode;
+    if(n < i){
         return;
     }
-    tail->next = newnode;
-    tail = newnode;
+    cout << i <<endl;
+    print(i+1,n);
+    
+    
 }
-
-void print_linked_list(Node* head)
-{
-    Node* tmp = head;
-    while(tmp != NULL)
-    {
-        cout << tmp->val <<endl;
-        tmp = tmp->next;
-    }
-}
-
 int main(){
-    Node* head = new Node(10);
-    Node* a = new Node(20);
-    Node* tail = new Node(30);
+    int n;
+    cin >> n;
+    print(1,n);
 
-    head->next = a;
-    a->next = tail;
-
-    insert_at_tail_op(head,tail,40);
-    print_linked_list(head);
     return 0;
 }
