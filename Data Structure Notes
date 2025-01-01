@@ -512,6 +512,33 @@ int main(){
 }
 
 ##insert at tail
+##previous and next code like insert at head
+
+void insert_at_tail(Node* &head,int val){
+    Node* newnode = new Node(val);
+    if(head == NULL){
+        head = newnode;
+        return;
+    }
+    Node* tmp = head;
+    while(tmp->next != NULL){
+        tmp = tmp->next;
+    }
+    tmp->next = newnode;
+}
+
+##insert at any position:
+##previous and next code like insert at head\
+
+void insert_at_any_pos(Node* &head,int idx,int val){
+    Node* newnode = new Node(val);
+    Node* tmp = head;
+    for(int i= 1;i<idx;i++){
+        tmp = tmp->next;
+    }
+    newnode->next = tmp->next;
+    tmp->next = newnode; 
+}
 
 
 
