@@ -466,7 +466,6 @@ int main(){
 
 #6.2 singly linklist 
 ##insert at head
-
 #include<bits/stdc++.h>
 using namespace std;
 class Node
@@ -513,7 +512,6 @@ int main(){
 
 ##insert at tail
 ##previous and next code like insert at head
-
 void insert_at_tail(Node* &head,int val){
     Node* newnode = new Node(val);
     if(head == NULL){
@@ -528,8 +526,7 @@ void insert_at_tail(Node* &head,int val){
 }
 
 ##insert at any position:
-##previous and next code like insert at head\
-
+##previous and next code like insert at head
 void insert_at_any_pos(Node* &head,int idx,int val){
     Node* newnode = new Node(val);
     Node* tmp = head;
@@ -539,6 +536,52 @@ void insert_at_any_pos(Node* &head,int idx,int val){
     newnode->next = tmp->next;
     tmp->next = newnode; 
 }
+
+##insert optimize way:
+#insert at tail:
+void insert_at_tail(Node* &head,Node* &tail,int val){
+    Node* newnode = new Node(val);
+    if(head == NULL){
+        head = newnode;
+        return;
+    }
+    tail->next = newnode;
+    tail = newnode;
+}
+
+##input linked list
+int main(){
+    Node* head = NULL;
+    Node* tail = NULL;
+    int val;
+    while(true){
+        cin >> val;
+        if(val == -1){
+            break;
+        }
+    insert_at_tail(head,tail,val); 
+    }
+    print_forward(head);
+    return 0;
+}
+
+##reverse linked list:
+void print_reverse(Node* tmp){
+    if(tmp == NULL){
+        return;
+    }
+    print_reverse(tmp->next);
+    cout << tmp->val << " ";
+}
+
+##delete at head
+void delete_at_head(Node* &head){
+    Node* deletenode = head;
+    head = head->next;
+    delete deletenode;
+}
+
+
 
 
 
