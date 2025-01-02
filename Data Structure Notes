@@ -592,6 +592,21 @@ void delete_at_any_pos(Node* &head,int idx){
     delete deletenode;
 }
 
+##delete at tail:
+like delete at any position:
+void delete_at_tail(Node* &head,Node* &tail,int idx){
+    Node* tmp = head;
+    for(int i=1;i<idx;i++){
+        tmp = tmp->next;
+    }
+    Node* deletenode = tmp->next;
+    tmp->next = tmp->next->next;
+    delete deletenode;
+    tmp = tail;
+}
+
+##doubly linked list:
+#insert at head
 
 
 
