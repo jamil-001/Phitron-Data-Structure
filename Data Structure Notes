@@ -607,6 +607,62 @@ void delete_at_tail(Node* &head,Node* &tail,int idx){
 
 ##doubly linked list:
 #insert at head
+void insert_at_head(Node* &head,Node* &tail,int val){
+    Node* newnode = new Node(val);
+       if(head == NULL){
+          head = newnode;
+          tail = newnode;
+          return;
+       }
+    newnode->next = head;
+    head->prev = newnode;
+    head = newnode;
+    
+}
+
+#insert at tail
+void insert_at_tail(Node* &head,Node* &tail,int val){
+    
+    Node* newnode = new Node(val);
+    if(head == NULL){
+        head = newnode;
+        tail = newnode;
+        return; 
+    }
+    tail->next = newnode;
+    newnode->prev = tail;
+    tail = newnode;
+    
+}
+
+#insert at any position
+void insert_at_any_pos(Node* &head,int idx,int val){
+        Node* newnode = new Node(val);
+        Node* tmp = head;
+        for(int i=1;i<idx;i++){
+            tmp = tmp->next;
+        }
+        newnode->next = tmp->next;
+        tmp->next->prev = newnode; 
+        tmp->next = newnode;     
+        newnode->prev = tmp;     
+}
+
+#delete at head doubly linked list:
+void delete_at_head(Node* &head,Node* &tail){
+    Node* deletenode = head;
+    head = head->next;
+    delete deletenode; 
+    if(head == NULL){
+        tail = NULL;
+        return;
+    }
+    head->prev = NULL;   
+}
+
+#delete at tail:
+
+
 
 
 
