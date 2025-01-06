@@ -620,7 +620,8 @@ void insert_at_head(Node* &head,Node* &tail,int val){
     
 }
 
-#insert at tail
+#doubly linkedlist:
+#insert at tail:
 void insert_at_tail(Node* &head,Node* &tail,int val){
     
     Node* newnode = new Node(val);
@@ -636,6 +637,7 @@ void insert_at_tail(Node* &head,Node* &tail,int val){
 }
 
 #insert at any position
+#doubly linkedlist:
 void insert_at_any_pos(Node* &head,int idx,int val){
         Node* newnode = new Node(val);
         Node* tmp = head;
@@ -648,7 +650,8 @@ void insert_at_any_pos(Node* &head,int idx,int val){
         newnode->prev = tmp;     
 }
 
-#delete at head doubly linked list:
+#delete at head:
+doubly linked list:
 void delete_at_head(Node* &head,Node* &tail){
     Node* deletenode = head;
     head = head->next;
@@ -661,6 +664,30 @@ void delete_at_head(Node* &head,Node* &tail){
 }
 
 #delete at tail:
+doubly linkedlist:
+void delete_at_tail(Node* &head,Node* &tail){
+     Node* deletenode= tail;
+     tail = tail->prev;
+     delete deletenode;
+     if(tail == NULL){
+        head = NULL;
+        return;
+     }
+     tail->next = NULL;
+}
+
+#delete at any position:
+doubly linkedlist:
+void delete_at_any_pos(Node* &head,int idx){
+     Node* tmp = head;
+     for(int i=1;i< idx;i++){
+        tmp = tmp->next;
+     }
+     Node* deletenode = tmp->next;
+     tmp->next = tmp->next->next;
+     tmp->next->prev = tmp;
+     delete deletenode;
+}
 
 
 
