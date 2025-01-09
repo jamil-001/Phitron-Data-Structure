@@ -678,15 +678,16 @@ void delete_at_tail(Node* &head,Node* &tail){
 
 #delete at any position:
 doubly linkedlist:
-void delete_at_any_pos(Node* &head,int idx){
+void delete_at_any_pos(Node*&head,Node* &tail,int idx){
      Node* tmp = head;
-     for(int i=1;i< idx;i++){
+     for(int i=1;i<idx;i++){
         tmp = tmp->next;
      }
      Node* deletenode = tmp->next;
-     tmp->next = tmp->next->next;
-     tmp->next->prev = tmp;
+     tmp->next = tmp->next->next;//next er connection done
+     tmp->next->prev = tmp->next;//prev er connection done
      delete deletenode;
+     
 }
 
 
