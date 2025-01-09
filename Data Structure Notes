@@ -715,6 +715,10 @@ for(auto it = l.begin();it != l.end(); it++){
 list<int> l = {10,20,30,40,50};
     list<int> l2(l);
 
+#for clear list:
+l.clear();
+
+#
 
 
 
