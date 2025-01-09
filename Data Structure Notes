@@ -711,6 +711,9 @@ for(auto it = l.begin();it != l.end(); it++){
         cout << val << endl;
     }
 
+#for copy list:
+list<int> l = {10,20,30,40,50};
+    list<int> l2(l);
 
 
 
