@@ -749,7 +749,56 @@ l.pop_back();
 #for insert at any position:
 l.insert(next(l.begin(),2),100);
 
-#
+
+#vector & list complexity difference:
+#for vector:
+v.insert(v.begin()+2,100);
+v.insert = o(n);
+(v.begin()+2,100) = o(1)
+
+#for list:
+v.insert(next(l.begin(),2),100);
+v.insert = o(1)
+next(l.begin(),2),100) = o(n);
+
+#for erase value of list:
+l.erase(next(l.begin(),2));
+
+#for erase multiple value:
+l.erase(next(l.begin(),2),next(l.begin(),5));
+
+#for replace value:
+replace(l.begin(),l.end(),20,100);
+
+#for find value:
+auto it = find(l.begin(),l.end(),200);
+    if(it == l.end()){
+        cout << "NOT FOUND"<<endl;
+    }else{
+        cout <<"Found" << endl;
+    }
+
+#operation function:
+#for remove same value in list:
+l.remove();
+
+#for sort list:
+l.sort();
+
+#for decending sort:
+l.sort(greater<int>());
+
+#for unique value find:
+first: l.sort();
+second: l.unique();
+
+#print front:
+cout << *l.begin() << endl;
+
+#print reverse order in singly linkedlist:
+
+#print reverse doubly linkedlist:
+
 
 
 
