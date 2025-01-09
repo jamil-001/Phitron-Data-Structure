@@ -690,6 +690,27 @@ void delete_at_any_pos(Node*&head,Node* &tail,int idx){
      
 }
 
+moudls 10: stl list & cycle detection:
+
+#for declare list:
+  list<int>l = {10,20,30,40,50,60};
+
+#for print size:
+cout << l.size() << endl;
+
+#for print begin value:
+cout <<*l.begin() << endl;
+
+#for print list use iterator:
+for(auto it = l.begin();it != l.end(); it++){
+         cout << *it << endl;
+ }
+
+#print list use range based for loop:
+    for(int val : l){
+        cout << val << endl;
+    }
+
 
 
 
