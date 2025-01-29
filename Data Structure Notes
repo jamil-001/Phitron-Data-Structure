@@ -799,6 +799,11 @@ cout << *l.begin() << endl;
 
 #print reverse doubly linkedlist:
 
+#list reverse order print:
+for(auto it = l.rbegin();it != l.rend(); it++){
+        cout << *it << " ";
+    }
+
 
 
 
