@@ -804,6 +804,40 @@ for(auto it = l.rbegin();it != l.rend(); it++){
         cout << *it << " ";
     }
 
+Stack data structure:
+week 4:
+-higher level data structure , abstruct data structure:
+
+A Stack is a linear data structure that follows a particular order in which the operations are performed. The order may be LIFO(Last In First Out) or FILO(First In Last Out).
+LIFO implies that the element that is inserted last, comes out first and FILO implies that the element that is inserted first, comes out last.
+
+#Stack Operation:
+1.Lifo = last in frist out
+-push();
+-pop();
+-top();
+-size();
+-empty();
+
+#stack implimentation:
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    stack<int> st;
+    int n;
+    cin >> n;
+    while(n--){
+        int x;
+        cin >> x;
+        st.push(x);
+    }
+    while(!st.empty())
+    {
+        cout << st.top() << endl;
+        st.pop();
+    }
+    return 0;
+}
 
 
 
