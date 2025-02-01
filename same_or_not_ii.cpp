@@ -1,8 +1,51 @@
 #include<bits/stdc++.h>
 using namespace std;
+class mystack
+{
+   public:
+   vector<int> v;
+   void push(int val)
+   {
+    v.push_back(val);
+   }
+   void pop()
+   {
+    v.pop_back();
+   }
+   int top()
+   {
+    return v.back();
+   }
+ 
+   bool empty()
+   {
+    return v.empty();
+   }
+};
+class myqueue
+{
+   public:
+   list<int> l;
+   void push(int val)
+   {
+    l.push_back(val);
+   }
+   void pop()
+   {
+    l.pop_front();
+   }
+   int front()
+   {
+    return l.front();
+   }
+   bool empty()
+   {
+    return l.empty();
+   }
+};
 int main(){
-    stack<int> st;
-    queue<int> q;
+    mystack st;
+    myqueue q;
     int n,m;
     bool flag = true;
     cin >> n >> m;
