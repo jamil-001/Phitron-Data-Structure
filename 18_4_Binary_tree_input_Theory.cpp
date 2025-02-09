@@ -21,11 +21,13 @@ Node* tree_input()
     Node* root;
     if(val == -1) root = NULL;
     else root = new Node(val);
-    if(root)
-    q.push(root);
-    while(!q.empty()){
+    if(root) q.push(root);
+    while(!q.empty())
+    {
+        //1.ber kore ana
         Node* p = q.front();
         q.pop();
+        //2.oi node niye kaj kora
         int l,r;
         cin >> l >> r;
         Node* myleft,*myright;
@@ -33,29 +35,39 @@ Node* tree_input()
         else myleft = new Node(l);
         if(r == -1) myright = NULL;
         else myright = new Node(r);
+
         p->left = myleft;
         p->right = myright;
-
+        //3. children push kora
         if(p->left)
            q.push(p->left);
         if(p->right)
-            q.push(p->right);
+           q.push(p->right);
     }
     return root;
 }
-int count_max_height(Node* root)
+void level_order(Node* root)
 {
-    if(root == NULL)
-    return 0;
-    if(root->left == NULL && root->right == NULL)
-    return 0;
     
-    int l = count_max_height(root->left);
-    int r = count_max_height(root->right);
-    return max(l,r)+1;
+    queue<Node*> q;
+    q.push(root);
+    while(!q.empty())
+    {
+        //1.ber kora
+        Node* f = q.front();
+        q.pop();
+        //2.oi node niye kaj kora
+        cout << f->val << " ";
+        //3.children push kora
+        if(f->left)
+           q.push(f->left);
+        if(f->right)
+            q.push(f->right);
+
+    }
 }
 int main(){
     Node* root = tree_input();
-    cout <<count_max_height(root) << endl;
+    level_order(root);
     return 0;
 }

@@ -21,11 +21,12 @@ Node* tree_input()
     Node* root;
     if(val == -1) root = NULL;
     else root = new Node(val);
-    if(root)
-    q.push(root);
-    while(!q.empty()){
+    if(root) q.push(root);
+    while(!q.empty())
+    {
         Node* p = q.front();
         q.pop();
+
         int l,r;
         cin >> l >> r;
         Node* myleft,*myright;
@@ -33,29 +34,28 @@ Node* tree_input()
         else myleft = new Node(l);
         if(r == -1) myright = NULL;
         else myright = new Node(r);
+
         p->left = myleft;
         p->right = myright;
 
-        if(p->left)
-           q.push(p->left);
-        if(p->right)
-            q.push(p->right);
+        if(p->left) q.push(p->left);
+        if(p->right) q.push(p->right);
     }
     return root;
-}
-int count_max_height(Node* root)
+    }
+
+int max_height(Node* root)
 {
     if(root == NULL)
-    return 0;
+        return 0;
     if(root->left == NULL && root->right == NULL)
-    return 0;
-    
-    int l = count_max_height(root->left);
-    int r = count_max_height(root->right);
+        return 0;
+    int l = max_height(root->left);
+    int r = max_height(root->right);
     return max(l,r)+1;
 }
 int main(){
     Node* root = tree_input();
-    cout <<count_max_height(root) << endl;
+    cout << max_height(root);
     return 0;
 }
