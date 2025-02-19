@@ -17,27 +17,30 @@ void level_order(Node* root)
 {
     queue<Node*>q;
     if(root)
-       q.push(root);
-    while(!q.empty()){
-        Node* p = q.front();
+      q.push(root);
+    while(!q.empty())
+    {
+        Node* f = q.front();
         q.pop();
-        cout << p->val << " ";
-        if(p->left)
-           q.push(p->left);
-        if(p->right)
-           q.push(p->right);
+
+        cout << f->val <<" ";
+        if(f->left)
+           q.push(f->left);
+        if(f->right)
+           q.push(f->right);
     }
 }
 Node* convert(int a[],int n,int l,int r)
 {
-    if(l > r) return NULL;
+    if(l > r)
+        return NULL;
     int mid = (l+r)/2;
     Node* root = new Node(a[mid]);
-    Node* leftroot = convert(a,n,l,mid-1);
-    Node* rightroot = convert(a,n,mid+1,r);
-    root->left = leftroot;
-    root->right = rightroot;
-    return root;
+   Node* leftroot = convert(a,n,l,mid-1);
+   Node* rightroot = convert(a,n,mid+1,r);
+   root->left = leftroot;
+   root->right = rightroot;
+   return root;
 }
 int main(){
     int n;
@@ -46,7 +49,7 @@ int main(){
     for(int i=0;i<n;i++){
         cin >> a[i];
     }
-   Node* root = convert(a,n,0,n-1);
-   level_order(root);
+    Node* root = convert(a,n,0,n-1);
+    level_order(root);
     return 0;
 }
